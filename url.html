@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+    <title>URL Encode/Decode JS Demo</title>
+  <link rel="shortcut icon" href="https://www.vandelaydesign.com/wp-content/themes/vd/assets/graphics/favicon.png">
+  <link rel="icon" href="https://www.vandelaydesign.com/wp-content/themes/vd/assets/graphics/favicon.png">
+  <link rel="stylesheet" type="text/css" media="all" href="normalize.css">
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+  <h3>URL Girdisi:</h3>
+  <textarea id="url" placeholder="http://"></textarea>
+
+  <div class="buttons">
+    <a onclick="encode()" href="#" class="encode">Encode</a>
+    <a onclick="decode()" href="#" class="decode">Decode</a>
+  </div><!-- @end .buttons -->
+
+  <h3>URL Çıktısı:</h3>
+  <textarea id="output"></textarea>
+</div><!-- @end .wrap -->
+</body>
+<style type="text/css">
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+h1 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.35em;
+  line-height: 1.4em;
+  color: #797979;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.1em;
+  line-height: 1.1em;
+  color: #666;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+/** page structure **/
+header {
+  display: block;
+  width: 100%;
+  background: #343434;
+}
+header h1 { padding: 35px 0; margin-top: 0; }
+
+.wrap { display: block; max-width: 700px; padding: 0 10px; margin: 10% auto; text-align: center; }
+#url {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  padding: 8px 5px;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 0.75em;
+  margin-bottom: 25px;
+  outline: none;
+}
+#output {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  outline: none;
+  color: #666;
+  font-size: 1em;
+  padding: 3px 2px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: block;
+  margin-bottom: 45px;
+}
+.buttons a {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #42a5f5;
+  color: #e1f1fd;
+  text-decoration: none;
+}
+.buttons a:hover {
+  background: #52acf4;
+}
+.buttons a:active {
+  background: #1e88e5;
+  color: #bbdefb;
+}
+
+.buttons a.encode { margin-right: 15px; }
+</style>
+<script type="text/javascript">
+// encode fonksiyonu
+// uri degiskeni tanimlayip url id sinde bulunan veriyi cekiyoruz.
+// encodeURlCompenent ozelligi ile encode islemeni yapiyoruz
+    function encode() {
+  var uri = document.getElementById("url").value;
+  var uri_enc = encodeURIComponent(uri);
+  document.getElementById("output").innerHTML = uri_enc;
+}
+
+// decode fonksiyonu
+// uri degiskeni tanimlayip url id sinde bulunan veriyi cekiyoruz.
+// decodeURlCompenent ozelligi ile decode islemeni yapiyoruz.
+    function decode() {
+  
+  var uri = document.getElementById("url").value;
+  var uri_dec = decodeURIComponent(uri);
+  document.getElementById("output").innerHTML = uri_dec;
+}
+</script>
+</html>
